@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Task Data</title>
+    <style>
+      body {
+        background-color: lightgrey;
+        text-align: center;
+        font-family: Courier, monospace;
+      }
+      h2 {
+        background-color: white;
+        text-align: center;
+        font-size: 1.5em
+        font-family: Courier, monospace;
+      }
+      li {
+        text-align: center;
+        margin: 10px 0;
+        font-family: Courier, monospace;
+      }
+      form {
+        text-align: center;
+        font-family: Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>The data for item "{{data['content']}}" with id {{id_num}} is: </h2><br>
+    <li> ID: {{data['id']}} </li>
+    <li> Deleted: {{data['deleted']}} </li>
+    <li> Completed: {{data['completed']}} </li>
+    <li> Content:  {{data['content']}} </li>
+    <li> User ID: {{data['user_id']}} </li><br>
+    <form action = "/auth" method = "POST">
+      <input type = submit value = "Back to to-do items"><br><br><br>
+    </form>
+    <a href="/logout">Click here to Logout</a>
+  </body>
+</html>

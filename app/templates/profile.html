@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>My Profile</title>
+    <style>
+      body {
+        background-color: lightgrey;
+        text-align: center;
+        font-family: Courier, monospace;
+      }
+      h1 {
+        background-color: white;
+        text-align: center;
+        font-size: 1.5em
+        font-family: Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome Back {{user}}</h1><br>
+    Your personal raw information is:
+    {{data}}
+    <br><br><br>
+    <form action = "/auth" method = "POST">
+      Click here to see your todo's
+      <input type = submit value = MyTodos><br><br><br>
+    </form>
+    <a href="/logout">Click here to Logout</a>
+  </body>
+</html>

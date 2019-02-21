@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>My Todo's</title>
+    <style>
+      body {
+        background-color: lightgrey;
+        text-align: center;
+        font-family: Courier, monospace;
+      }
+      h1 {
+        background-color: white;
+        text-align: center;
+        font-size: 1.5em
+        font-family: Courier, monospace;
+      }
+      li {
+        text-align: center;
+        margin: 10px 0;
+        font-family: Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> These are your to-do's:</h1><br>
+      {% for elements in data_to_do %}
+        {% if elements['completed'] == True: %}
+            <li><strike> {{elements["content"]}} </strike> - task ID: {{elements["id"]}} </li>
+          {% else: %}
+            <li> {{elements["content"]}} - task ID: {{elements["id"]}}</li>
+        {% endif %}
+      {% endfor %}
+    <br><br>
+    <form action = "/new_item" method = "POST">
+      Enter a new to-do item: <input type = "text" name = "to_do_item">
+      <input type = submit>
+    </form>
+    <form action = "/itemdata" method = "POST">
+      Submit the ID of a particular task for further details <input type = "text" name = "id_number">
+      <input type = submit>
+    </form>
+    <form action = "/completed" method = "POST">
+      Submit the ID of the task you've completed <input type = "text" name = "id_number">
+      <input type = submit>
+    </form>
+    <form action = "/deleted" method = "POST">
+      Submit the ID of the task you'd like to delete <input type = "text" name = "id_number">
+      <input type = submit>
+    </form><br>
+    <a href="/logout">Click here to Logout</a><br>
+  </body>
+</html>
